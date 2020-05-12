@@ -1,5 +1,5 @@
 
-# ✅ Github Actions Runner
+# ✅ Github Actions Runner (Docker executor)
 
 > Simple Docker images for starting self-hosted Github Actions runner(s).
 
@@ -40,9 +40,9 @@ jobs:
         run: echo "Hello world"
 ```
 
-### Executors with language support (NodeJS, Python3...)
+### Runners with language support (NodeJS, Python3...)
 
-Just select your executor in the Docker image tag.
+Just select your runner in the Docker image tag.
 
 Currently available:
 
