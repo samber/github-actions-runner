@@ -1,11 +1,11 @@
 
-# Github Actions Runner
+# Github Actions Runner ✅
 
-Simple Docker images for starting self-hosted Github Actions runner(s).
+> Simple Docker images for starting self-hosted Github Actions runner(s).
 
 ![Screenshot Github self-hosted runners](./screenshot1.png)
 
-## Quick start
+## 🚀 Quick start
 
 Generate a token from your repository settings:
 
@@ -85,7 +85,7 @@ You just need to write a Dockerfile starting with `FROM samber/github-actions-ru
 
 You can contribute to this repository or create your own Docker image.
 
-## Docker compose
+## 💡 Docker compose
 
 ### Simple runner
 
@@ -185,13 +185,13 @@ jobs:
         run: go testt
 ```
 
-## Advanced
+## 🤯 Advanced
 
 ### Run as root
 
 For whatever (bad 😅) reason, if you need to start runners as root, you have to set container user to `root`, and add an empty `RUNNER_ALLOW_RUNASROOT` environment variables.
 
-## Build
+## 🔬 Build
 
 ```bash
 docker build -f Dockerfile          -t samber/github-actions-runner:latest  -t samber/github-actions-runner:2.169.1 .
@@ -220,7 +220,7 @@ docker push samber/github-actions-runner:php
 docker push samber/github-actions-runner:php-2.169.1
 ```
 
-## Host cleanup
+## ♻️  Host cleanup
 
 Clean stopped containers on a daily basis:
 
@@ -229,3 +229,28 @@ $ crontab -e
 
 0 0 * * * /usr/bin/docker system prune -f
 ```
+
+## 🤝 Contributing
+
+This project is open source and contributions from community (you!) are welcome.
+
+There are many ways to contribute: writing code, documentation, reporting issues...
+
+## Author
+
+👤 **Samuel Berthe**
+
+* Twitter: [@samuelberthe](https://twitter.com/samuelberthe)
+* Github: [@samber](https://github.com/samber)
+
+## 💫 Show your support
+
+Give a ⭐️ if this project helped you!
+
+[![support us](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://www.patreon.com/samber)
+
+## 📝 License
+
+Copyright © 2020 [Samuel Berthe](https://github.com/samber).
+
+This project is [MIT](./LICENSE) licensed.
