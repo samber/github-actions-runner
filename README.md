@@ -1,26 +1,29 @@
 
-# Github Actions Runner ✅
+# ✅ Github Actions Runner
 
 > Simple Docker images for starting self-hosted Github Actions runner(s).
 
 ![Screenshot Github self-hosted runners](./screenshot1.png)
 
+[Github official documentation for self-hosted runners.](https://help.github.com/en/actions/hosting-your-own-runners/adding-self-hosted-runners)
+
 ## 🚀 Quick start
 
-Generate a token from your repository settings:
+Add your self-hosted runner from your repository settings:
 
 - Go to repository > settings > actions
 - Click on "Add runner"
-
-[Documentation.](https://help.github.com/en/actions/hosting-your-own-runners/adding-self-hosted-runners)
+- Copy the URL and token
 
 ```sh
-docker run -d \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  -v /tmp:/tmp \
-  -e GH_RUNNER_TOKEN=xxxxxxxxxxxxx \
-  -e GH_REPOSITORY=xxxxxxxxxxxx \
-	samber/github-actions-runner:latest
+# start a runner on your server
+
+$ docker run -d \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v /tmp:/tmp \
+    -e GH_RUNNER_TOKEN=xxxxxxxxxxxxx \
+    -e GH_REPOSITORY=xxxxxxxxxxxx \
+    samber/github-actions-runner:latest
 ```
 
 ```yaml
@@ -52,12 +55,12 @@ Currently available:
 ```sh
 # start a NodeJS runner
 
-docker run -d \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  -v /tmp:/tmp \
-  -e GH_RUNNER_TOKEN=xxxxxxxxxxxxx \
-  -e GH_REPOSITORY=xxxxxxxxxxxx \
-  samber/github-actions-runner:node
+$ docker run -d \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v /tmp:/tmp \
+    -e GH_RUNNER_TOKEN=xxxxxxxxxxxxx \
+    -e GH_REPOSITORY=xxxxxxxxxxxx \
+    samber/github-actions-runner:node
 ```
 
 ```yaml
