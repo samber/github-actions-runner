@@ -35,17 +35,17 @@ jobs:
         run: echo "Hello world"
 ```
 
-### Executors with langage support (NodeJS, Python3...)
+### Executors with language support (NodeJS, Python3...)
 
 Just select your executor in the Docker image tag.
 
 Currently available:
 
-- node
-- golang
-- python
-- java
-- php
+- samber/github-actions-runner:node
+- samber/github-actions-runner:golang
+- samber/github-actions-runner:python
+- samber/github-actions-runner:java
+- samber/github-actions-runner:php
 
 ```sh
 # start a NodeJS runner
@@ -79,7 +79,7 @@ jobs:
 
 ### Missing language support ?
 
-You just need to inherit from `samber/github-actions-runner:latest` image.
+You just need to write a Dockerfile starting with `FROM samber/github-actions-runner:latest`.
 
 You can contribute to this repository or create your own Docker image.
 
@@ -104,13 +104,13 @@ services:
 ```
 
 ```sh
-docker-compose up -d
+$ docker-compose up -d
 ```
 
 ### Concurrent executors
 
 ```sh
-docker-compose scale runner=3
+$ docker-compose scale runner=3
 ```
 
 ### Runners with language support
@@ -146,9 +146,11 @@ services:
 ```
 
 ```sh
-docker-compose up -d
-docker-compose scale runner-node=2 runner-golang=2
-``
+$ docker-compose up -d
+$ docker-compose scale runner-node=2 runner-golang=2
+```
+
+After starting containers, add tags to runners (such as `golang` and `node`) from the repository settings.
 
 ```yaml
 # .github/workflows/main.yml
@@ -189,7 +191,7 @@ For whatever (bad 😅) reason, if you need to start runners as root, you have t
 
 ## Build
 
-```
+```bash
 docker build -f Dockerfile          -t samber/github-actions-runner:latest  -t samber/github-actions-runner:2.169.1 .
 docker build -f Dockerfile.node     -t samber/github-actions-runner:node    -t samber/github-actions-runner:node-2.169.1 .
 docker build -f Dockerfile.golang   -t samber/github-actions-runner:golang  -t samber/github-actions-runner:golang-2.169.1 .
