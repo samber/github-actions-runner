@@ -3,6 +3,8 @@
 
 Simple Docker images for starting self-hosted Github Actions runner(s).
 
+![Screenshot Github self-hosted runners](./screenshot1.png)
+
 ## Quick start
 
 Generate a token from your repository settings:
@@ -41,11 +43,11 @@ Just select your executor in the Docker image tag.
 
 Currently available:
 
-- samber/github-actions-runner:node
-- samber/github-actions-runner:golang
-- samber/github-actions-runner:python
-- samber/github-actions-runner:java
-- samber/github-actions-runner:php
+- samber/github-actions-runner:**node**
+- samber/github-actions-runner:**golang**
+- samber/github-actions-runner:**python**
+- samber/github-actions-runner:**java**
+- samber/github-actions-runner:**php**
 
 ```sh
 # start a NodeJS runner
