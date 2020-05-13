@@ -1,5 +1,5 @@
 
-# 👌 Github Actions Runner (self-hosted Docker executor)
+# 👌 Github Actions self-hosted runner provisionning
 
 > Simple Docker images for starting self-hosted Github Actions runner(s).
 
