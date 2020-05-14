@@ -28,6 +28,6 @@ workDir=/tmp/_work/$(pwgen -s1 5)
 mkdir -p ${workDir}
 echo "Runner working directory: ${workDir}"
 
-/runner/config.sh --unattended --url ${GH_REPOSITORY} --token ${GH_RUNNER_TOKEN} --replace --work ${workDir}
+/runner/config.sh --unattended --url ${GH_REPOSITORY} --token ${GH_RUNNER_TOKEN} --labels ${GH_RUNNER_LABELS} --replace --work ${workDir}
 
 exec /runner/run.sh

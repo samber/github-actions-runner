@@ -21,8 +21,9 @@ Add your self-hosted runner from your repository settings:
 $ docker run -d \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v /tmp:/tmp \
-    -e GH_RUNNER_TOKEN=xxxxxxxxxxxxx \
     -e GH_REPOSITORY=xxxxxxxxxxxx \
+    -e GH_RUNNER_TOKEN=xxxxxxxxxxxxx \
+    -e GH_RUNNER_LABELS=label1,label2 \
     samber/github-actions-runner:latest
 ```
 
@@ -58,8 +59,9 @@ Currently available:
 $ docker run -d \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v /tmp:/tmp \
-    -e GH_RUNNER_TOKEN=xxxxxxxxxxxxx \
     -e GH_REPOSITORY=xxxxxxxxxxxx \
+    -e GH_RUNNER_TOKEN=xxxxxxxxxxxxx \
+    -e GH_RUNNER_LABELS=node \
     samber/github-actions-runner:node
 ```
 
@@ -103,8 +105,9 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /tmp:/tmp
     environment:
-      - GH_RUNNER_TOKEN=xxxxxxxxxxxxx
       - GH_REPOSITORY=xxxxxxxxxxxx
+      - GH_RUNNER_TOKEN=xxxxxxxxxxxxx
+      - GH_RUNNER_LABELS=label1,label2 \
     restart: unless-stopped
 ```
 
@@ -122,7 +125,7 @@ $ docker-compose scale runner=3
 
 You will need to register multiple runners, with different name+tokens.
 
-In the following example, we created 2 self-hosted runners: node and golang, with respective runner tag: "node" and "golang".
+In the following example, we create 2 self-hosted runners: node and golang, with respective tag: "node" and "golang". We will start 2 instances of each.
 
 ```yaml
 version: '3'
@@ -135,8 +138,9 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /tmp:/tmp
     environment:
-      - GH_RUNNER_TOKEN=xxxxxxxxxxxxx
       - GH_REPOSITORY=yyyyyyyyyyyyy
+      - GH_RUNNER_TOKEN=xxxxxxxxxxxxx
+      - GH_RUNNER_LABELS=node \
     restart: unless-stopped
 
   runner-golang:
@@ -145,8 +149,9 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /tmp:/tmp
     environment:
-      - GH_RUNNER_TOKEN=zzzzzzzzzzzzz
       - GH_REPOSITORY=yyyyyyyyyyyyy
+      - GH_RUNNER_TOKEN=zzzzzzzzzzzzz
+      - GH_RUNNER_LABELS=golang \
     restart: unless-stopped
 ```
 
@@ -154,8 +159,6 @@ services:
 $ docker-compose up -d
 $ docker-compose scale runner-node=2 runner-golang=2
 ```
-
-After starting containers, add tags to runners (such as `golang` and `node`) from the repository settings.
 
 ```yaml
 # .github/workflows/main.yml
