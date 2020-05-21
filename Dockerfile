@@ -1,7 +1,7 @@
 
 FROM debian:buster
 
-ARG GH_ACTIONS_RUNNER_VERSION=2.169.1
+ARG GH_ACTIONS_RUNNER_VERSION=2.262.1
 ARG PACKAGES="gnupg2 apt-transport-https ca-certificates software-properties-common pwgen git make curl wget zip libicu-dev build-essential libssl-dev"
 
 # install basic stuff
