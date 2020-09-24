@@ -200,30 +200,30 @@ For whatever (bad 😅) reason, if you need to start runners as root, you have t
 ## 🔬 Build
 
 ```bash
-docker build -f Dockerfile          -t samber/github-actions-runner:latest  -t samber/github-actions-runner:2.262.1 .
-docker build -f Dockerfile.node     -t samber/github-actions-runner:node    -t samber/github-actions-runner:node-2.262.1 .
-docker build -f Dockerfile.golang   -t samber/github-actions-runner:golang  -t samber/github-actions-runner:golang-2.262.1 .
-docker build -f Dockerfile.python   -t samber/github-actions-runner:python  -t samber/github-actions-runner:python-2.262.1 .
-docker build -f Dockerfile.java     -t samber/github-actions-runner:java    -t samber/github-actions-runner:java-2.262.1 .
-docker build -f Dockerfile.php      -t samber/github-actions-runner:php     -t samber/github-actions-runner:php-2.262.1 .
+docker build -f Dockerfile          -t samber/github-actions-runner:latest  -t samber/github-actions-runner:2.272.0 .
+docker build -f Dockerfile.node     -t samber/github-actions-runner:node    -t samber/github-actions-runner:node-2.272.0 .
+docker build -f Dockerfile.golang   -t samber/github-actions-runner:golang  -t samber/github-actions-runner:golang-2.272.0 .
+docker build -f Dockerfile.python   -t samber/github-actions-runner:python  -t samber/github-actions-runner:python-2.272.0 .
+docker build -f Dockerfile.java     -t samber/github-actions-runner:java    -t samber/github-actions-runner:java-2.272.0 .
+docker build -f Dockerfile.php      -t samber/github-actions-runner:php     -t samber/github-actions-runner:php-2.272.0 .
 
 docker push samber/github-actions-runner:latest
-docker push samber/github-actions-runner:2.262.1
+docker push samber/github-actions-runner:2.272.0
 
 docker push samber/github-actions-runner:node
-docker push samber/github-actions-runner:node-2.262.1
+docker push samber/github-actions-runner:node-2.272.0
 
 docker push samber/github-actions-runner:golang
-docker push samber/github-actions-runner:golang-2.262.1
+docker push samber/github-actions-runner:golang-2.272.0
 
 docker push samber/github-actions-runner:python
-docker push samber/github-actions-runner:python-2.262.1
+docker push samber/github-actions-runner:python-2.272.0
 
 docker push samber/github-actions-runner:java
-docker push samber/github-actions-runner:java-2.262.1
+docker push samber/github-actions-runner:java-2.272.0
 
 docker push samber/github-actions-runner:php
-docker push samber/github-actions-runner:php-2.262.1
+docker push samber/github-actions-runner:php-2.272.0
 ```
 
 ## ♻️  Host cleanup
