@@ -10,12 +10,12 @@ fi
 
 if [[ -z ${GH_REPOSITORY} ]];
 then
-    echo "Environment variable 'GH_RUNNER_TOKEN' is not set"
+    echo "Environment variable 'GH_REPOSITORY' is not set"
     exit 1
 fi
 
 # generate random password
-# silent fail because it wont be able override password on restartt
+# silent fail because it wont be able override password on restart
 newPass=$(pwgen -s1 20)
 printf "runner\n${newPass}\n${newPass}\n" | passwd 2> /dev/null || echo
 
