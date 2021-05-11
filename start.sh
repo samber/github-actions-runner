@@ -31,4 +31,5 @@ echo "Runner working directory: ${workDir}"
 # can fail if already configured
 /runner/config.sh --unattended --url ${GH_REPOSITORY} --token ${GH_RUNNER_TOKEN} --labels ${GH_RUNNER_LABELS} --replace --work ${workDir} || echo
 
-exec /runner/run.sh
+#exec /runner/run.sh
+cd /runner; nohup ./run.sh 2 >&1 | tee
